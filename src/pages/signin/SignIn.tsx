@@ -8,22 +8,8 @@ import Auth from "../../component/firebase/auth"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 
-const validationSchema = Yup.object({})
-
 const SignIn = () => {
   const navigate = useNavigate()
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: ""
-    },
-    onSubmit: (values, { resetForm }) => {
-      Auth.login(values)
-      resetForm({})
-    },
-    validationSchema
-  })
 
   return (
     <>
@@ -40,19 +26,15 @@ const SignIn = () => {
           <CustomTextField
             name="email"
             placeholder="Email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
             icon={<EmailOutlinedIcon />}
           />
           <CustomTextField
             name="password"
             placeholder="Password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
             icon={<HttpsOutlinedIcon />}
           />
         </Box>
-        <Button onClick={() => console.log("okokok")} variant="contained">
+        <Button onClick={() => console.log("okokokoko")} variant="contained">
           LogIn
         </Button>
         <Divider sx={{ width: "20%" }}>OR</Divider>
